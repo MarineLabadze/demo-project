@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="group">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" formControlName="email">
+            <small *ngIf="this.loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched">*Email is invalid</small>
+        </div>
+    
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+             <small *ngIf=" val_pass()">{{val_pass()}}</small>
+        </div>
+    </div>
+    <button (click)="Login()">Log In</button>
+    <button (click)="goToRegister()">Sign Up</button>
+</form>

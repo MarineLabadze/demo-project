@@ -1,0 +1,14 @@
+<div class="request">
+    <p>Choose Date: </p>
+    <div class="mb-3">
+      <input type="date" class="form-control" id="selectedDate" [(ngModel)]="selectedDate">
+    </div>
+    <div class="shifts">
+      <p>Shift: </p>
+      <button class="shift-button" (click)="selectedShift = 'Morning'">Morning</button>
+      <button class="shift-button" (click)="selectedShift = 'Evening'">Evening</button>
+    </div>
+    <div class="buttons">
+      <button (click)="addSchedule()">Add Schedule</button>
+    </div>
+  </div>

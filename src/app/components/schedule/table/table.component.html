@@ -1,0 +1,26 @@
+<app-current-date></app-current-date>
+<div class="buttons">
+    <button (click)="navigateWeek(-7)"> ⤌ Previous Week</button>
+    <button (click)="navigateWeek(7)">Next Week ⤍</button>
+</div>
+<div class="table-wrapper">
+    <table class="fl-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th *ngFor="let date of dates">{{ date }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td *ngFor="let day of days">{{ day.substring(0, 2) }}</td>
+        </tr>
+        <tr *ngFor="let job of jobOptions">
+          <td>{{ job.title }}</td>
+          <td *ngFor="let day of days">{{ job[day.toLowerCase()] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

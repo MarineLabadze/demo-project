@@ -1,0 +1,17 @@
+.parent {
+  display: grid;
+  grid-template-columns: 0.2fr 0.8fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+
+.sidebar{
+  height: 100dvh;
+  width: 20dvw;
+}
+.content{
+  grid-area: 1/2;
+  height: 100dvh;
+  width: 50dvw;
+}

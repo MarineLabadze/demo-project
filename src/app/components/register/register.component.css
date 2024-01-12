@@ -1,0 +1,24 @@
+form{
+    padding: 10% 35%;
+    background-color: rgb(176, 173, 173);
+}
+.group{
+    display: flex;
+    column-gap: 20px;
+}
+input.ng-invalid.ng-touched{
+    border: red 1px solid;
+}
+small{
+    color: red;
+}
+p{
+    margin: 0 120px;
+}
+a{
+    text-decoration: none;
+}
+.current-date {
+    background-color: lightblue;
+    font-weight: bold;
+  }

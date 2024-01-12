@@ -1,0 +1,72 @@
+/* Add your custom styles here */
+
+.navbar {
+  background-color: #324960;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.navbar-menu {
+  display: flex;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  content: " ▼";
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #324960;
+  padding: 10px;
+  display: none;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #324960;
+}
+
+.dropdown-divider {
+  border-top: 1px solid #324960;
+  margin: 8px 0;
+}
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
