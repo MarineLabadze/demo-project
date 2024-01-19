@@ -17,6 +17,10 @@ import { CurrentDateComponent } from './components/schedule/current-date/current
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TableComponent } from './components/schedule/table/table.component';
 import { PendingRequestsComponent } from './components/pending-requests/pending-requests.component';
+import { DeleteJobComponent } from './components/delete-job/delete-job.component';
+import { DeleteUserComponent } from './components/delete-user/delete-user.component';
+import { AddJobComponent } from './components/add-job/add-job.component';
+import { ChangeIdComponent } from './components/change-id/change-id.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +35,10 @@ import { PendingRequestsComponent } from './components/pending-requests/pending-
     NavbarComponent,
     TableComponent,
     PendingRequestsComponent,
+    DeleteJobComponent,
+    DeleteUserComponent,
+    AddJobComponent,
+    ChangeIdComponent,
   ],
   imports: [
     BrowserModule,

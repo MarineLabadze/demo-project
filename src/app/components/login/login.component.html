@@ -1,17 +1,40 @@
+<br>
+<h1>Welcome to YippeeJob</h1>
+<h3>Please, Log In</h3>
+<br>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="group">
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="text" class="form-control" id="email" formControlName="email">
-            <small *ngIf="this.loginForm.get('email')?.invalid && this.loginForm.get('email')?.touched">*Email is invalid</small>
+            <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">*Email is invalid</small>
         </div>
     
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" formControlName="password">
-             <small *ngIf=" val_pass()">{{val_pass()}}</small>
+            <small *ngIf="getPasswordValidationMessage()">{{getPasswordValidationMessage()}}</small>
         </div>
     </div>
+    <br>
+    
+    <button type="button" (click)="login()">Log In</button>
+    <button type="button" (click)="goToRegister()">Sign Up</button>
+</form> 
+
+<!-- <form [formGroup]="loginForm">
+    <h2>Log in</h2>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" formControlName="email" 
+        placeholder="Email">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" 
+        placeholder="Email">
+    </div>
+
     <button (click)="Login()">Log In</button>
-    <button (click)="goToRegister()">Sign Up</button>
-</form>
+    <button (click)="goToRegister()">Register</button>
+</form> -->

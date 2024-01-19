@@ -1,26 +1,66 @@
+<!-- <app-current-date></app-current-date>
+<div class="buttons">
+  <button (click)="navigateWeek(-7)" class="btn">⤌ Previous Week</button>
+  <button (click)="navigateWeek(7)" class="btn">Next Week ⤍</button>
+</div>
+
+<div class="table-wrapper">
+  <table class="fl-table">
+      <thead>
+          <tr>
+              <th></th>
+              <th *ngFor="let date of dates">{{ date }}</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td></td>
+              <td *ngFor="let day of days">{{ day.substring(0, 2) }}</td>
+          </tr>
+          <tr *ngFor="let job of jobOptions">
+              <td>{{ job.title }}</td>
+              <td *ngFor="let day of days" [ngClass]="{'highlighted': job[day.toLowerCase()] === 'Shift'}">
+                  {{ job[day.toLowerCase()] }}
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div> -->
+
+
+
+
 <app-current-date></app-current-date>
 <div class="buttons">
-    <button (click)="navigateWeek(-7)"> ⤌ Previous Week</button>
-    <button (click)="navigateWeek(7)">Next Week ⤍</button>
+    <button (click)="navigateWeek(-7)" class="btn"> ⤌ Previous Week</button>
+    <button (click)="navigateWeek(7)" class="btn">Next Week ⤍</button>
 </div>
 <div class="table-wrapper">
     <table class="fl-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th *ngFor="let date of dates">{{ date }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td *ngFor="let day of days">{{ day.substring(0, 2) }}</td>
-        </tr>
-        <tr *ngFor="let job of jobOptions">
-          <td>{{ job.title }}</td>
-          <td *ngFor="let day of days">{{ job[day.toLowerCase()] }}</td>
-        </tr>
-      </tbody>
+        <thead>
+            <tr>
+                <th></th>
+                <th *ngFor="let date of dates">{{ date }}</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td *ngFor="let day of days">{{day.substring(0,3)}}</td>
+          </tr>
+            <tr *ngFor="let job of jobOptions">
+                <td>{{ job.title }}</td>
+                <td *ngFor="let date of dates">
+                    <div *ngFor="let worker of Worker">
+                        <ng-container  *ngIf="worker.date === date && worker.jobTitle === job.title">
+                          <div  class="workersInfo" [ngClass]="{'cont': worker.info.includes('Evening'), 'cont1': worker.info.includes('Morning')}">
+                            {{ worker.info }}
+                          </div>
+                        </ng-container>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
     </table>
-  </div>
+</div>
   

@@ -1,3 +1,5 @@
+<h1>Welcome to out Yippeejob</h1>
+<h3>REGISTRATION FORM:</h3>
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     <div class="group">
         <div class="mb-3">
@@ -16,11 +18,7 @@
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-      <small *ngIf="val_email()">*Email Name is required</small>
-      <small *ngIf="this.registrationForm.get('username')?.errors?.['usernameNotAllowed'] 
-                "></small>
-
+      <small *ngIf="val_email()">{{val_email()}}</small>
     </div>
 
     <div class="group">
@@ -39,20 +37,16 @@
           </div>
     </div>
 
-<!-- 
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div> -->
-
     <div class="mb-3">
         <label  class="form-label">Select Position</label>
         <select class="form-select" formControlName="jobId">
          <option *ngFor="let job of jobOptions" [ngValue]="job">{{job.title}}</option>
         </select>
       </div>
-    <button type="submit" (click)="Register()" class="btn btn-primary" [disabled]="registrationForm.invalid">Sign Up</button>
+    <button style="background-color: #7360DF; " type="submit" (click)="Register()" class="btn btn-primary" [disabled]="registrationForm.invalid">Sign Up</button>
 
-    <p><a href="">Already have an acoount ?</a></p>
+    <p><a href="">If you already have account click here!</a></p>
   </form>
+
+
 

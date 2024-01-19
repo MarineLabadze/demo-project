@@ -53,4 +53,32 @@ export class FuncService {
     const url = `https://localhost:44330/api/Admin/delete-schedule/${scheduleId}`;
     return this.http.delete(url);
   }
+
+  //DELETE JOB/POSIITON
+  deleteJobPosition(jobId: number): Observable<any> {
+    const url = `https://localhost:44330/api/Admin/delete-job/${jobId}`;
+    return this.http.delete(url);
+  }
+
+//ADD JOBS
+addJobPosition(jobDto: { title: string }): Observable<any> {
+  const url = `https://localhost:44330/api/Admin/add-new-job`;
+  return this.http.post(url, jobDto);
+}
+
+
+ //DELETE USER
+deleteUser(userId: number): Observable<any> {
+  const url = `https://localhost:44330/api/Admin/delete-user/${userId}`;
+  return this.http.delete(url);
+}
+//CHANGE ROLE
+changeUserRole(userId: number, newRoleId: number): Observable<any> {
+  const changeUserRoleDTO = { UserId: userId, NewRoleId: newRoleId };
+  const url = `https://localhost:44330/api/Admin/change-user-role`; 
+  return this.http.post(url, changeUserRoleDTO);
+}
+
+
+
 }

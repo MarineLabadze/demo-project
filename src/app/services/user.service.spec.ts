@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FuncService } from './func.service';
+import { FuncService } from './user.service';
 
 describe('FuncService', () => {
   let service: FuncService;

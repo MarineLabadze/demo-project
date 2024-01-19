@@ -1,7 +1,22 @@
 <app-navbar></app-navbar>
-<h1>ADMIN</h1>
-<app-table></app-table>
-
+<h1>✨ Welcome, Admin</h1>
+<br>
 <div class="pendings">
-    <button (click)="pendingRequests()">Open Pending Request</button>
+    <button class="btn1" (click)="pendingRequests()">Open Requests</button>
+</div>
+<div>
+<app-table></app-table>
+<br>
+<br>
+<h1>✨Things you can change✨</h1>
+<br>
+<div class="div1">
+<button class="btn" (click)="GoToDeleteJob()">Delete Job</button>
+
+<button class="btn" (click)="GoToDeleteUser()">Delete User</button>
+
+<button class="btn" (click)="Addjob()">Add New Job</button>
+
+<button class="btn" (click)="ChangeId()">Change User Role ID</button>
+</div>
 </div>

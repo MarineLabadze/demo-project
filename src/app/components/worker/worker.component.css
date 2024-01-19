@@ -1,3 +1,9 @@
+h1{
+    text-align: center;
+    margin: 20px;
+    color: #7360DF;
+}
+
 button {
     background-color: rgb(224, 88, 88);
     color: #fff;

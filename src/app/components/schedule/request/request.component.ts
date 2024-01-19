@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FuncService } from 'src/app/services/func.service';
+import { FuncService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-request',

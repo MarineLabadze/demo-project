@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<br>
+<div>
+    <h3>Add new job:</h3>
+    <br>
+    <form (ngSubmit)="addNewJob()">
+      <label for="jobName">Job name:</label>
+      <input type="text" id="jobName" name="jobName" [(ngModel)]="newJobName" required>
+      <button type="submit">Add</button>
+    </form>
+  <br>
+  <button (click)="GoToAdmin()">Go back</button>
+</div> 

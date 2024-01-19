@@ -21,7 +21,7 @@ export class CurrentDateComponent {
     // Display the week number
     const currentWeekNumber = this.getWeekNumber(currentDate);
     
-    return `${currentDateString} (Week starting on ${weekStartDateString}, Week ${currentWeekNumber})`;
+    return `${currentDateString}`;
   }
   
   private getWeekNumber(date: Date): number {

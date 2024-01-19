@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<br>
+<div>
+    <h3>Change role Id:</h3>
+    <br>
+    <label for="userId">User ID:</label>
+    <input type="number" [(ngModel)]="userId" name="userId" required />
+  
+    <label for="newRoleId">New Role ID:</label>
+    <input type="number" [(ngModel)]="newRoleId" name="newRoleId" required />
+  
+    <button (click)="changeUserRole()">Change User Role</button>
+    <br>
+    <br>
+    <button (click)="GoToAdmin()">Go back</button>
+  </div>
+ 

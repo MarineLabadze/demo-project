@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Job } from 'src/app/interfaces/job';
-import { FuncService } from 'src/app/services/func.service';
+import { FuncService } from 'src/app/services/user.service';
 import { passwordMatchValidator } from 'src/app/validators/passwordMatch.Validator';
 import { CustomValidator } from 'src/app/validators/val.Validators';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'register',
@@ -17,7 +19,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-     private FuncService: FuncService
+     private FuncService: FuncService,
+     private router: Router 
+
      ){}
   
   ngOnInit(): void {
@@ -29,7 +33,7 @@ export class RegisterComponent implements OnInit {
     this.registrationForm = this.fb.group({
       firstName: [null, [Validators.required,CustomValidator.noSpaceValidator]],
       lastName: [null, [Validators.required,CustomValidator.noSpaceValidator]],
-      email: [null, [Validators.required,Validators.email, CustomValidator.usernameNotAllowed]],
+      email: [null, [Validators.required,Validators.email]],
       password: [null, [Validators.required, Validators.minLength(6)]],
       confirmPassword: [null, Validators.required],
       jobId:  [null,Validators.required]
@@ -91,6 +95,7 @@ export class RegisterComponent implements OnInit {
         this.FuncService.registerUser({...userData, JobId: job.id}).subscribe({
           next: (response) => {
             console.log(response);
+            this.router.navigate(['/login']);
           },
           error: (error) => {
             console.log('Registration failed: ', error);

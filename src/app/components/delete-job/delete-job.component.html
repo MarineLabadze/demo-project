@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<br>
+<div>
+<h3>Delete Job Position:</h3>
+<br>
+  <form (ngSubmit)="deleteJobPosition()">
+    <label for="jobId">Job ID:</label>
+    <input type="number" id="jobId" name="jobId" [(ngModel)]="jobIdToDelete" required>
+    <button type="submit">Delete</button>
+    <br>
+    <br>
+    <button (click)="GoToAdmin()">Go Back</button>
+  </form>
+</div>

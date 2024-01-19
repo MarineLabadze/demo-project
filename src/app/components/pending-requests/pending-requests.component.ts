@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FuncService } from 'src/app/services/func.service';
+import { FuncService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pending-requests',
@@ -7,11 +8,13 @@ import { FuncService } from 'src/app/services/func.service';
   styleUrls: ['./pending-requests.component.css']
 })
 export class PendingRequestsComponent implements OnInit {
-  constructor(private FuncService: FuncService){}
+  
+  constructor(private FuncService: FuncService, private router: Router,){}
   ngOnInit(): void {
     this.fetchRequests();
   }
   Requests: any[] = [];
+
 
   fetchRequests():void {
     this.FuncService.getRequests().subscribe({
@@ -51,5 +54,9 @@ export class PendingRequestsComponent implements OnInit {
         console.error(`Error declining request with ID ${requestId}: `, error);
       }
     });
+  }
+
+  GoToAdmin(){
+    this.router.navigate(['/admin']);
   }
 }

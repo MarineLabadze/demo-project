@@ -1,72 +1,25 @@
-/* Add your custom styles here */
 
 .navbar {
-  background-color: #324960;
+width: 103.4%;
+height: 80px;
+  background-color: #7360DF;
   color: #fff;
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
+  margin-left: -30px;
 }
 
 .navbar-brand {
   font-size: 1.5em;
-  color: #fff;
+  color: #F2AFEF;
+  margin-top: 5px;
+  margin-left: 10px;
 }
-
-.navbar-menu {
-  display: flex;
-}
-
-.navbar-nav {
-  list-style: none;
-  display: flex;
-  margin: 0;
-}
-
-.nav-item {
-  margin-right: 15px;
-}
-
-.nav-item a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-toggle::after {
-  content: " ▼";
-  font-size: 0.8em;
-  margin-left: 5px;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #324960;
-  padding: 10px;
-  display: none;
-}
-
-.dropdown-menu a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-  background-color: #324960;
-}
-
-.dropdown-divider {
-  border-top: 1px solid #324960;
-  margin: 8px 0;
-}
-
-/* Show dropdown menu on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
+.btn{
+  background-color: #33186B;
+  border: none;
+  width: 80px;
+  margin-right: 10px;
+  color: #F2AFEF;
 }
